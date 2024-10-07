@@ -1,9 +1,20 @@
 var tracks = [
-  "https://tidal.com/browse/track/131334629"
-]
+  {
+    "tidalId": "131334629"
+  }
+];
 
+
+function isMobileDevice() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
 
 function play() {
-   var track = tracks[0];
-   window.open(track, "_blank").focus();
+    var url = "https://tidal.com/browse/track/"
+    if (isMobileDevice()) {
+        url = "tidal://track/"
+    }
+    url = url + tracks[0]["tidalId"];
+    window.open(url, "_blank").focus();
 }
+
