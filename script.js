@@ -1,6 +1,8 @@
 var tracks = [
   {
-    "tidalId": "131334629"
+    "song": "Into The Black",
+    "tidal": "131334629",
+    "spotify": "2A6kF8nb0GuwxrMMrKsvtJ"
   }
 ];
 
@@ -10,11 +12,15 @@ function isMobileDevice() {
 }
 
 function play() {
-    var url = "https://tidal.com/browse/track/"
+    // var url = "https://tidal.com/browse/track/"
+    var url = "https://open.spotify.com/track/{id}"
     if (isMobileDevice()) {
-        url = "tidal://track/"
+        // url = "tidal://track/"
+	url = "spotify:track:{id}:play"
     }
-    url = url + tracks[0]["tidalId"];
+    // var track = tracks[0]["tidal"];
+    var id = tracks[0]["spotify"];
+    url = url.replace("{id}", id);
     window.open(url, "_blank").focus();
 }
 
