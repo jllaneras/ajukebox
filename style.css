@@ -2,9 +2,9 @@ body {
   background-color: black;
 }
 
-.center {
-  max-width: 100%;
-  max-height: 100%;
+input[type=image] {
+  max-width: 80%;
+  max-height: 80%;
   bottom: 0;
   left: 0;
   margin: auto;
@@ -12,7 +12,12 @@ body {
   position: fixed;
   right: 0;
   top: 0;
-  -o-object-fit: contain;
   object-fit: contain;
+  animation: fall 0.3s ease-in;
+}
+
+@keyframes fall {
+  from {transform: translateY(-100%);}
+  to {transform: translateY(0%);}
 }
 

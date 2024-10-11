@@ -41,7 +41,7 @@ class Playlist {
   }
 }
 
-const playlist = new Playlist([
+const aj = new Playlist([
   new Track("131334629", "2A6kF8nb0GuwxrMMrKsvtJ", "Into the Black"),
   new Track("90410954", "53oc5U2cz4MydANM35abYV", "Darkhorse"),
   new Track("15427705", "6PGToxtt6KrZztJe6j66in", "Five Seconds"),
