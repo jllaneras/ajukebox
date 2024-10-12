@@ -13,16 +13,14 @@ input[type=image] {
   right: 0;
   top: 0;
   object-fit: contain;
-  animation: fall 0.3s ease-in;
+  animation: fade-in 1s ease-in;
 }
 
-@keyframes fall {
+@keyframes fade-in {
   from {
-    transform: translateY(-100%);
     opacity: 0;
   }
   to {
-    transform: translateY(0%);
     opacity: 100;
   }
 }
