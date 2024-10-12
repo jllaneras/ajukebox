@@ -7,16 +7,16 @@ class Track {
     this.name = name;
     this.providers = {
       tidal: {
-         browser: "https://listen.tidal.com/track/" + tidalId,
-	 app: "tidal://track/" + tidalId
+        browser: "https://listen.tidal.com/track/" + tidalId,
+	      app: "tidal://track/" + tidalId
       },
       spotify: {
-	 browser: "https://open.spotify.com/track/" + spotifyId,
-	 app: "spotify:track:" + spotifyId + ":play"
+	      browser: "https://open.spotify.com/track/" + spotifyId,
+	      app: "spotify:track:" + spotifyId + ":play"
       },
       multi: {
-        browser: "https://tidal.com/browse/track/" + tidalId + "?u",
-        app: "https://tidal.com/browse/track/" + tidalId + "?u"
+        browser: "https://tidal.com/browse/track/" + tidalId + "/u",
+        app: "https://tidal.com/browse/track/" + tidalId + "/u"
       }
     };
   }
