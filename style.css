@@ -3,7 +3,7 @@ body {
   animation: fade-in 1s ease;
 }
 
-input[type=image] {
+#ajukebox {
   max-width: 70%;
   max-height: 70%;
   bottom: 0;
@@ -17,12 +17,18 @@ input[type=image] {
   -webkit-tap-highlight-color: transparent;
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 100;
-  }
+#ajukebox:active {
+  animation: wiggle 0.3s;
 }
 
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 100; }
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+   50% { transform: rotate(5deg); }
+   75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}

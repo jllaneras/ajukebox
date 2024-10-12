@@ -41,7 +41,6 @@ class Playlist {
     let platform = isAndroid() ? "app" : "browser";
     let url = this.randomTrack().getUrl(provider, platform);
     window.open(url, "_blank").focus();
-    return false;
   }
 }
 
