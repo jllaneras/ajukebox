@@ -7,16 +7,16 @@ class Track {
     this.name = name;
     this.providers = {
       tidal: {
-        browser: "https://listen.tidal.com/track/" + tidalId,
-	      app: "tidal://track/" + tidalId
+        desktop: "https://listen.tidal.com/track/" + tidalId,
+        android: "tidal://track/" + tidalId
       },
       spotify: {
-	      browser: "https://open.spotify.com/track/" + spotifyId,
-	      app: "spotify:track:" + spotifyId + ":play"
+        desktop: "https://open.spotify.com/track/" + spotifyId,
+        android: "spotify:track:" + spotifyId + ":play"
       },
       multi: {
-        browser: "https://tidal.com/browse/track/" + tidalId + "/u",
-        app: "https://tidal.com/browse/track/" + tidalId + "/u"
+        desktop: "https://tidal.com/browse/track/" + tidalId + "/u",
+        android: "https://tidal.com/browse/track/" + tidalId + "/u"
       }
     };
   }
@@ -38,7 +38,7 @@ class Playlist {
   play() {
     let query = window.location.search.substring(1);
     let provider = (query == "spotify" || query=="multi") ? query : "tidal";
-    let platform = isAndroid() ? "app" : "browser";
+    let platform = isAndroid() ? "android" : "desktop";
     let url = this.randomTrack().getUrl(provider, platform);
     window.open(url, "_blank").focus();
   }
@@ -98,7 +98,7 @@ const aj = new Playlist([
 
 async function testUrls() {
   for (let i = 0; i < aj.tracks.length; i++) {
-    window.open(aj.tracks[i].getUrl("tidal", "browser"), "_blank");
+    window.open(aj.tracks[i].getUrl("tidal", "desktop"), "_blank");
     await new Promise(res => setTimeout(res, 1000))
   }
 }
