@@ -20,6 +20,7 @@ class Track {
       }
     };
   }
+
   getUrl(provider, platform) {
     return this.providers[provider][platform];
   }
@@ -29,15 +30,18 @@ class Playlist {
   constructor(tracks) {
     this.tracks = tracks;
   }
+
   randomTrack() {
     return this.tracks[Math.floor(Math.random()*this.tracks.length)];
   }
+
   play() {
     let query = window.location.search.substring(1);
-    let provider = (query != "") ? query : "tidal";
+    let provider = (query == "spotify" || query=="multi") ? query : "tidal";
     let platform = isAndroid() ? "app" : "browser";
     let url = this.randomTrack().getUrl(provider, platform);
     window.open(url, "_blank").focus();
+    return false;
   }
 }
 
@@ -90,5 +94,5 @@ const aj = new Playlist([
   new Track("AWOLNATION - Sail", "37352999", "7ueP5u2qkdZbIPN2YA6LR0"),
   new Track("Pharrell Williams - Happy", "77440246", "60nZcImufyMA1MKQY3dcCH"),
   new Track("Lily Allen - Fuck You", "3237059", "3ZhLeIbuUTR10WTljA972g"), // 2024-10-11
-  //new Track("", "", ""),
+  //new Track("name", "tidalId", "spotifyId"),
 ]);
