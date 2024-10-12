@@ -13,6 +13,7 @@ input[type=image] {
   right: 0;
   top: 0;
   object-fit: contain;
+  -webkit-tap-highlight-color: transparent;
   animation: fade-in 1s ease-in;
 }
 
