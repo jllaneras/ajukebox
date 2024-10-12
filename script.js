@@ -85,7 +85,7 @@ const aj = new Playlist([
   new Track("Ludovico Einaudi - Einaudi: Experience", "23319147", "6eWKf639gKufnnbu9GKFd8"),
   new Track("Biffy Clyro - Bubbles", "3180427", "41CZarbx8MtXKEgcB8tk7R"),
   new Track("Daughter - New Ways", "38963629", "6kFFYhsCqdUki4f8ohFeLI"),
-  new Track("Daughter - Numbers", "241717774", "5dGg0Wf5tKM1D3R6Rr4xlK"),
+  new Track("Daughter - Numbers", "58082968", "5dGg0Wf5tKM1D3R6Rr4xlK"),
   new Track("Low - Lullaby", "1346075", "1De66xUavye2fNqhCwtgyo"),
   new Track("Michael Kiwanuka - Love & Hate", "62786954", "7oOEFDLSQscl0uGulnIEmG"),
   new Track("Nine Inch Nails - The Perfect Drug", "94442112", "14tKBoKXxGakkoEmYuFfor"),
@@ -95,3 +95,11 @@ const aj = new Playlist([
   new Track("Lily Allen - Fuck You", "3237059", "3ZhLeIbuUTR10WTljA972g"), // 2024-10-11
   //new Track("name", "tidalId", "spotifyId"),
 ]);
+
+async function testUrls() {
+  for (let i = 0; i < aj.tracks.length; i++) {
+    window.open(aj.tracks[i].getUrl("tidal", "browser"), "_blank");
+    await new Promise(res => setTimeout(res, 1000))
+  }
+}
+// testUrls();
