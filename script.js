@@ -13,10 +13,6 @@ class Track {
       spotify: {
         desktop: "https://open.spotify.com/track/" + spotifyId,
         android: "spotify:track:" + spotifyId + ":play"
-      },
-      multi: {
-        desktop: "https://tidal.com/browse/track/" + tidalId + "/u",
-        android: "https://tidal.com/browse/track/" + tidalId + "/u"
       }
     };
   }
@@ -37,7 +33,7 @@ class Playlist {
 
   play() {
     let query = window.location.search.substring(1);
-    let provider = (query == "spotify" || query=="multi") ? query : "tidal";
+    let provider = (query == "spotify") ? query : "tidal";
     let platform = isAndroid() ? "android" : "desktop";
     let url = this.randomTrack().getUrl(provider, platform);
     window.open(url, "_blank").focus();
