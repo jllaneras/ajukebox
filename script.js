@@ -93,6 +93,9 @@ const aj = new Playlist([
   new Track("AWOLNATION - Sail", "37352999", "7ueP5u2qkdZbIPN2YA6LR0"),
   new Track("Pharrell Williams - Happy", "77440246", "60nZcImufyMA1MKQY3dcCH"),
   new Track("Lily Allen - Fuck You", "3237059", "3ZhLeIbuUTR10WTljA972g"), // 2024-10-11
+  new Track("Dum Dum Girls - Coming Down", "7861525", "62o5ETvaR1U8CqxVYancy4"),
+  new Track("Bush - Comedown", "73879387", "7KgVUnGCMEXBwY2EeqGlaI"),
+  new Track("Cat Power - (I Can't Get No) Satisfaction", "49793769", "6dv99Xm7fEjm7K1ATHj1UG"),  //2024-10-15
   //new Track("name", "tidalId", "spotifyId"),
 ]);
 
